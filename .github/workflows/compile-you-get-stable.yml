@@ -35,7 +35,7 @@ jobs:
           cd stable
           ./get.sh
           pyinstaller -F launcher.py
-          %CD%/dist/launcher.exe --version
+          cd %CD%/dist/launcher.exe --version
           cd ../../
           mkdir -p build/you-get/stable
           mv you-get-root/stable/dist/launcher.exe build/you-get/stable/you-get.exe
