@@ -37,11 +37,13 @@ jobs:
           pyinstaller -F launcher.py
           dir /a/s
           %CD%/dist/launcher.exe --version
-          mkdir -p build/you-get/stable
-          mv you-get-root/stable/dist/launcher.exe build/you-get/stable/you-get.exe
+          cd ../../
+          set myDIR=build\you-get\stable\
+          IF not exist %myDIR% (mkdir %myDIR%)
+          move %CD%\you-get-root\stable\dist\launcher.exe %CD%\build\you-get\stable\
           git config --local user.email "i@focuschen.com"
           git config --local user.name "Focus Chen"
-          git add -f build/you-get/stable/
+          git add -f build/you-get/stable/* --quiet
           git commit -m "update you-get exe" --quiet
         shell: cmd
       - uses: ad-m/github-push-action@master
