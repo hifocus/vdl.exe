@@ -41,9 +41,10 @@ jobs:
           set myDIR=build\you-get\stable\
           IF not exist %myDIR% (mkdir %myDIR%)
           move %CD%\you-get-root\stable\dist\launcher.exe %CD%\build\you-get\stable\
+          rename launcher.exe you-get.exe
           git config --local user.email "i@focuschen.com"
           git config --local user.name "Focus Chen"
-          git add -f build/you-get/stable/* --quiet
+          git add -f build/you-get/stable/*
           git commit -m "update you-get exe" --quiet
         shell: cmd
       - uses: ad-m/github-push-action@master
