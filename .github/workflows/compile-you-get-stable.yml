@@ -34,21 +34,8 @@ jobs:
           cd you-get-root && cp launcher.py stable/launcher.py
           cd stable
           ./get.sh
+          python launcher.py
           pyinstaller -F launcher.py
-          dir /a/s
-          %CD%/dist/launcher.exe --version
-          cd ../../
-          mkdir -p build/you-get/stable
-          mv you-get-root/stable/dist/launcher.exe build/you-get/stable/you-get.exe
-                  git config --local user.email "i@focuschen.com"
-          git config --local user.name "Focus Chen"
-          git add -f build/you-get/stable/you-get.exe
-          git commit -m "update you-get exe" --quiet
-        shell: cmd
-      - uses: ad-m/github-push-action@master
-        with:
-          branch: master #ignore if your branch is master
-          github_token: ${{ secrets.GH_TOKEN }}
       - uses: actions/upload-artifact@v2
         with:
           name: my-artifact
