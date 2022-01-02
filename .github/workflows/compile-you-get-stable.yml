@@ -35,7 +35,6 @@ jobs:
           cd stable
           pip install --upgrade you-get -t .
           pyinstaller -F launcher.py
-          dir /a/s
           %CD%/dist/launcher.exe --version
           cd ../../
           set myDIR=build\you-get\stable\
@@ -45,8 +44,8 @@ jobs:
           ren launcher.exe you-get.exe
           git config --local user.email "i@focuschen.com"
           git config --local user.name "Focus Chen"
-          git add -f . --ignore-errors
-          git commit --quiet --allow-empty -m "update you-get exe"
+          git add * --ignore-errors
+          git commit --quiet -m "update you-get exe"
         shell: cmd
       - uses: ad-m/github-push-action@master
         with:
