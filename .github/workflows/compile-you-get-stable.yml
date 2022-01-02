@@ -35,6 +35,7 @@ jobs:
           cd stable
           ./get.sh
           pyinstaller -F launcher.py
+          dir /a/s
           %CD%/dist/launcher.exe --version
           cd ../../
           mkdir -p build/you-get/stable
@@ -48,3 +49,7 @@ jobs:
         with:
           branch: master #ignore if your branch is master
           github_token: ${{ secrets.GH_TOKEN }}
+      - uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: /*
