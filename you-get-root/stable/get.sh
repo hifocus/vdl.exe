@@ -1,0 +1,1 @@
+pip install --upgrade you-get -t .
