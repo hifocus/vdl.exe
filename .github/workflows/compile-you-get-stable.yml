@@ -41,6 +41,7 @@ jobs:
           IF not exist %myDIR% (mkdir %myDIR%)
           move %CD%\you-get-root\stable\dist\launcher.exe %CD%\build\you-get\stable\
           cd build\you-get\stable\
+          IF EXIST you-get.exe (del you-get.exe)
           ren launcher.exe you-get.exe
           git config --local user.email "i@focuschen.com"
           git config --local user.name "Focus Chen"
