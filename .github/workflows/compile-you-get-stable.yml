@@ -41,7 +41,8 @@ jobs:
           set myDIR=build\you-get\stable\
           IF not exist %myDIR% (mkdir %myDIR%)
           move %CD%\you-get-root\stable\dist\launcher.exe %CD%\build\you-get\stable\
-          rename launcher.exe you-get.exe
+          cd %CD%\build\you-get\stable\
+          ren launcher.exe you-get.exe
           git config --local user.email "i@focuschen.com"
           git config --local user.name "Focus Chen"
           git add -f build/you-get/stable/*
@@ -51,7 +52,3 @@ jobs:
         with:
           branch: master #ignore if your branch is master
           github_token: ${{ secrets.GH_TOKEN }}
-      - uses: actions/upload-artifact@v2
-        with:
-          name: my-artifact
-          path: /*
