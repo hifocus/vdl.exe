@@ -37,8 +37,10 @@ jobs:
           cd you-get-root && cp launcher.py stable/launcher.py
           cd stable
           ./get.sh
+          ls
           python launcher.py
           pyinstaller -F launcher.py
+        shell: cmd
       - uses: actions/upload-artifact@v2
         with:
           name: my-artifact
