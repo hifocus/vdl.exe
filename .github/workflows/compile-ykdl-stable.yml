@@ -33,7 +33,7 @@ jobs:
           git config --local user.name "Focus Chen"
           pip install --upgrade pyinstaller
           cd ykdl
-          git clone https://github.com/SeaHOH/ykdl.git .
+          git clone https://github.com/SeaHOH/ykdl.git stable
           ren ykdl stable
           move get_stable.py stable\
           move build_ykdl_actions.cmd stable\
