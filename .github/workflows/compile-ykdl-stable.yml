@@ -28,7 +28,9 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: npm install
-        run: %CD%/ykdl/npm.bat
+        run: |
+          echo 666
+          %CD%/ykdl/npm.bat
         
       - name: Run a multi-line script
         run: |
