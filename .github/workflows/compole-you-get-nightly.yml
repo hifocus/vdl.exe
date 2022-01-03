@@ -5,6 +5,9 @@ name: compile-you-get-nightly
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+   paths:
+    - '.github/workflows/*yml'
   schedule:
     - cron: 5 0,6,12,18 * * *
 

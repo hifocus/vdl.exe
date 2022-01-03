@@ -5,6 +5,9 @@ name: compile-ykdl stable
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+   paths:
+    - '.github/workflows/*yml'
   schedule:
     - cron: 0 0,6,12,18 * * *
 
@@ -33,7 +36,10 @@ jobs:
           git config --local user.name "Focus Chen"
           pip install --upgrade pyinstaller ykdl
           cd ykdl
-          python get_stable.py && %CD%/enter_folder.bat && %CD%/unzip.bat
+          python get_stable.py && %CD%/move.bat
+          echo %CD%
+          %CD%/unzip.bat
+          echo %CD%
           curl -o build.bat https://raw.githubusercontent.com/hifocus/vdl.exe/master/ykdl/build_ykdl_actions.cmd
           %CD%/ykdl.exe -h
           move ykdl.exe ../../../
