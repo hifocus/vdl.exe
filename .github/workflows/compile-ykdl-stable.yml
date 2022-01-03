@@ -41,10 +41,6 @@ jobs:
           cd stable
           python get_stable.py
           %CD%\checkout.bat
-        shell: cmd
-
-      - name: Run a multi-line script
-        run: |
           %CD%\build_ykdl_actions.cmd
           %CD%\ykdl.exe -h
           cd ../../
