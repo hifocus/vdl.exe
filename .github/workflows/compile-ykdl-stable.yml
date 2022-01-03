@@ -39,6 +39,8 @@ jobs:
           git clone https://github.com/SeaHOH/ykdl.git stable
           cd ykdl
           echo %CD%
+          set myDIR=ykdl\stable\
+          IF not exist %myDIR% (mkdir %myDIR%)
           move get_stable.py stable\
           move build_ykdl_actions.cmd stable\
           cd stable
