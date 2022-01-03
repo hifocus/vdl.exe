@@ -29,9 +29,9 @@ jobs:
           git config --local user.email "i@focuschen.com"
           git config --local user.name "Focus Chen"
           pip install --upgrade pyinstaller ykdl
+          npm install move-cli@2.0.0
           cd ykdl
-          python get_stable.py
-          %CD%/enter_folder.bat
+          python get_stable.py && %CD%/enter_folder.bat && %CD%/unzip.bat
           curl -o build.bat https://raw.githubusercontent.com/hifocus/vdl.exe/master/ykdl/build_ykdl_actions.cmd
           %CD%/ykdl.exe -h
           move ykdl.exe ../../../
