@@ -50,12 +50,13 @@ jobs:
           cd ../../
           set myDIR=build\stable\ykdl\
           IF not exist %myDIR% (mkdir %myDIR%)
+          cd build\stable\ykdl &&　IF EXIST ykdl.exe (del ykdl.exe)　＆＆cd ../../../
           move %CD%\ykdl\stable\ykdl.exe %CD%\build\stable\
           cd build\stable\
-          IF EXIST ykdl.exe (del ykdl.exe)
-          git add * --ignore-errors
+          git add *.exe --ignore-errors
           git commit --quiet -m "update ykdl stable exe"
         shell: cmd
+        
       - uses: ad-m/github-push-action@master
         with:
           branch: master #ignore if your branch is master
