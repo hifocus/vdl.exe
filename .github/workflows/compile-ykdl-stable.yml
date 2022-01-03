@@ -28,7 +28,7 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: npm install
-        run: npm install move-cli@2.0.0 -g
+        run: %CD%/ykdl/npm.bat
         
       - name: Run a multi-line script
         run: |
