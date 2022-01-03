@@ -38,6 +38,7 @@ jobs:
           cd ../
           git clone https://github.com/SeaHOH/ykdl.git stable
           cd ykdl
+          echo %CD%
           move get_stable.py stable\
           move build_ykdl_actions.cmd stable\
           cd stable
