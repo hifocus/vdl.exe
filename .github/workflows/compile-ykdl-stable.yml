@@ -31,6 +31,7 @@ jobs:
         run: |
           echo 666
           %CD%/ykdl/npm.bat
+        shell: cmd
         
       - name: Run a multi-line script
         run: |
