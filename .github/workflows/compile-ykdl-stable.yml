@@ -41,7 +41,7 @@ jobs:
           git clone https://github.com/SeaHOH/ykdl.git
           python get_stable.py
           %CD%\checkout.bat
-       shell: cmd
+        shell: cmd
 
       - name: Run a multi-line script
         run: |
