@@ -7,4 +7,3 @@ echo hiddenimports = [x for x in collect_submodules('ykdl')]>> hooks\hook-ykdl.p
 C:\Python37\Scripts\pyinstaller.exe --onefile --noupx --additional-hooks-dir hooks --name ykdl "__main__.py"
 copy /y dist\ykdl.exe ykdl.exe
 rd /s /q __pycache__ build dist hooks && del __main__.py ykdl.spec
-pause
